@@ -52,6 +52,23 @@ Ran `ipconfig` in Windows PowerShell to inspect local network configuration.
 ```
 ipconfig
 ```
+<img width="629" height="140" alt="image" src="https://github.com/user-attachments/assets/6c93d314-bc31-4732-95c7-41dab12e839a" />
+
+```
+ipconfig /all
+```
+<img width="1186" height="310" alt="image" src="https://github.com/user-attachments/assets/10771de8-137d-4b3d-a319-45e75126b3dd" />
+
+```
+getmac
+```
+<img width="710" height="267" alt="image" src="https://github.com/user-attachments/assets/a7d00fda-48da-4715-bf06-cf4a7f0e9156" />
+
+```
+getmac /v
+```
+<img width="1020" height="240" alt="image" src="https://github.com/user-attachments/assets/a9eeae02-cd28-449a-85a3-5b70a5da9583" />
+
 
 **Observed output included:**
 - Multiple network adapters (several disconnected WiFi adapter entries, two VMware virtual adapters — VMnet1 and VMnet8 — and an active WiFi adapter)
@@ -59,13 +76,17 @@ ipconfig
   - IPv4 Address: 192.168.185.23
   - Subnet Mask: 255.255.255.0
   - Default Gateway: 192.168.185.144
+  
 
 **Observation/troubleshooting:**
-Expected to see a MAC address in the output but did not find one. Correctly reasoned that plain `ipconfig` does not display physical (MAC) addresses by default. Confirmed that `ipconfig /all` (showing "Physical Address") or the `getmac` command would be needed to view this — noted as something to try next time.
+Expected to see a MAC address in the output but did not find one. Correctly reasoned that plain `ipconfig` does not display physical (MAC) addresses by default. Confirmed that `ipconfig /all` (showing "Physical Address") or the `getmac` command would be needed to view this.
 
 ## Tools Used
 - Windows PowerShell
 - `ipconfig`
+- `ipconfig /all`
+- `getmac`
+- `getmac /v`
 
 ## Results
 Successfully retrieved and correctly interpreted local IPv4 configuration details (IP address, subnet mask, default gateway) for the active network adapter, and correctly diagnosed the absence of MAC address information in the default command output.
